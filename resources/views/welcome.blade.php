@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Jumbotron Template · Bootstrap</title>
-
+    
     <link href="css/bootstrap.min.css" rel="stylesheet" >
     <link href="css/jumbotron.css" rel="stylesheet">
 
@@ -41,21 +41,17 @@
   <div class="container">
     <!-- Example row of columns -->
     <div class="row">
+    
+  @foreach ($articles as $article)
+
+
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <h2>{{$article->title}}</h2>
+        <p>{{$article->alias}}</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
+   @endforeach  
+
     </div>
     <hr>
   </div> <!-- /container -->
