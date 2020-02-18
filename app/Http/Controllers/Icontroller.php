@@ -10,8 +10,8 @@ class Icontroller extends Controller
 {
     //metoda
     public function index() {
-    	$a='Hello from Ana-Maria';
-    	$b='Hello from Ana-Maria';
+    	$a='Hello69';
+    	$b='69Hewo';
     	$articles=Article::all();
      return view ('welcome')->with(['a'=>$a, 'b'=>$b, 'articles'=>$articles]);
 
