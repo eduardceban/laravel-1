@@ -20,7 +20,7 @@ public function __construct()
     
     public function index() 
     {
-    	$articles=Article::select(['id', 'title', 'description'])->get();
+    	$articles=Article::select(['id', 'title', 'description', 'img'])->get();
      return view ('welcome')->with(['a'=>$this->a, 'b'=>$this->b, 'articles'=>$articles]);
 
     }
