@@ -8,13 +8,30 @@ use App\Article;
 
 class Icontroller extends Controller
 {
-    //metoda
-    public function index() {
-    	$a='Hello69';
-    	$b='69Hewo';
-    	$articles=Article::all();
-     return view ('welcome')->with(['a'=>$a, 'b'=>$b, 'articles'=>$articles]);
+	protected $a;
+	protected $b;
+
+public function __construct()
+{
+	$this->a='Hello69';
+	$this->b='69Hewo';
+}
+
+    
+    public function index() 
+    {
+    	$articles=Article::select(['id', 'title', 'description'])->get();
+     return view ('welcome')->with(['a'=>$this->a, 'b'=>$this->b, 'articles'=>$articles]);
 
     }
+public function show($id)
+{
+	$article=Article::select(['id', 'title', 'text'])->where('id',$id)->first();
+	return view ('article-content')->with(['a'=>$this->a, 'b'=>$this->b, 'article'=>$article]);
+}
 
 }
+
+
+?>
+

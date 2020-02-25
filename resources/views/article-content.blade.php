@@ -1,5 +1,14 @@
 @extends('layouts.master')
 @section('content')
+ <head>
+    <meta charset="utf-8">
+    <title>Proiect Laravel Cb</title>
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" >
+    <link href="{{asset('css/jumbotron.css')}}" rel="stylesheet">
+
+     </head>
+  <body>
+    
 <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -15,15 +24,14 @@
     <!-- Example row of columns -->
     <div class="row">
     
-  @foreach ($articles as $article)
+  @if($article)
 
 
-      <div class="col-md-4">
         <h2>{{$article->title}}</h2>
-        <p>{{$article->description}}</p>
-        <p><a class="btn btn-secondary" href="{{route('articleShow', ['id'=>$article->id])}}" role="button">View details &raquo;</a></p>
+        <p>{!!$article->text!!}</p>
+        
       </div>
-   @endforeach  
+    @endif 
 
     </div>
     <hr>
