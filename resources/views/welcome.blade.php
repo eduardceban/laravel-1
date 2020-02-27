@@ -22,7 +22,7 @@
         <h2>{{$article->title}}</h2>
         <p>{{$article->description}}</p>
         <p><a class="btn btn-secondary" href="{{route('articleShow', ['id'=>$article->id])}}" role="button">View details &raquo;</a></p>
-        <img src="{{articles->img}}">
+        <img src={{$article->img}}>
       </div>
    @endforeach  
 

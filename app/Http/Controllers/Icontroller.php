@@ -26,7 +26,7 @@ public function __construct()
     }
 public function show($id)
 {
-	$article=Article::select(['id', 'title', 'text'])->where('id',$id)->first();
+	$article=Article::select(['id', 'title', 'text','img'])->where('id',$id)->first();
 	return view ('article-content')->with(['a'=>$this->a, 'b'=>$this->b, 'article'=>$article]);
 }
 
